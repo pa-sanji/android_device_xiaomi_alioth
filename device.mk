@@ -35,6 +35,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# BPF
+# The 4.19 MagicTime kernel carries the 5.10 BPF backports. Report the
+# backported version so netd/bpfloader can use the newer programs.
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bpf.kver_override=5.10.239
+
 # Adaptive Suspend
 PRODUCT_PROPERTY_OVERRIDES += \
     suspend.short_suspend_threshold_millis=5000
