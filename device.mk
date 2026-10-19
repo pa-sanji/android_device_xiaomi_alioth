@@ -587,19 +587,6 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
-# DTBO
-# Android 17 no longer includes QCOM's generate_extra_images.mk, but
-# build/core/Makefile still needs BOARD_PREBUILT_DTBOIMAGE when
-# BOARD_KERNEL_SEPARATED_DTBO is set. Generate it from the DTBOs that
-# the kernel build produces.
-ifeq ($(strip $(BOARD_KERNEL_SEPARATED_DTBO)),true)
-$(BOARD_PREBUILT_DTBOIMAGE): $(HOST_OUT_EXECUTABLES)/mkdtimg$(HOST_EXECUTABLE_SUFFIX) $(PRODUCT_OUT)/kernel
-	$(hide) $(HOST_OUT_EXECUTABLES)/mkdtimg$(HOST_EXECUTABLE_SUFFIX) create $@ \
-	    --page_size=$(BOARD_KERNEL_PAGESIZE) \
-	    $$(find $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/arch/arm64/boot/dts -name '*.dtbo')
-	$(hide) chmod a+r $@
-endif
-
 # USB
 PRODUCT_HAS_GADGET_HAL := true
 
