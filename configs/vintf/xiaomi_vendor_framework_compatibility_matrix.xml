@@ -137,4 +137,13 @@
             <instance>gnss_vendor</instance>
         </interface>
     </hal>
+    <!-- AIDL fingerprint (A17) -->
+    <hal format="aidl" optional="true">
+        <name>android.hardware.biometrics.fingerprint</name>
+        <version>4</version>
+        <interface>
+            <name>IFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
