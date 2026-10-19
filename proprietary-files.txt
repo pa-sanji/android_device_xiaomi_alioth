@@ -1,4 +1,4 @@
-# All the pinned blobs from MIUI are extracted from miui_ALIOTHGlobal_OS1.0.3.0.TKHMIXM_57a88631b9_13.0 or from miui_MUNCHGlobal_OS1.0.9.0.ULMMIXM_7b798621ce_14.0
+# All the pinned blobs from MIUI are extracted from miui_ALIOTHGlobal_OS1.0.3.0.TKHMIXM_57a88631b9_13.0
 # All the unpinned blobs are from extracted from LA.UM.9.12.r1-14400-SMxx50.QSSI12.0
 
 # ADSPRPC
@@ -10,6 +10,7 @@ vendor/etc/init/vendor.qti.adsprpc-service.rc
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/lib/libfastcrc.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libcdsp_default_listener.so
@@ -21,6 +22,18 @@ vendor/lib64/libsysmon_cdsp_skel.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # Adreno - MIUI
+vendor/firmware/a615_zap.b00|55c1a14a5699d05f796a982448711159f8208951
+vendor/firmware/a615_zap.b01|ee4cd063e8b2887edc5660b6da7d2efb935b9fa1
+vendor/firmware/a615_zap.b02|4ae54047f9629f2470a5d58f3940c5eb51298b96
+vendor/firmware/a615_zap.elf|9ccc18b2572767aef7091fe41c3a6c0edc76b3cf
+vendor/firmware/a615_zap.mdt|c7e10a5f37f0bf30c126dd1719d6d0899760e29a
+vendor/firmware/a619_gmu.bin|0c211ef8a3246d649a4ae52a926d128b61e3c264
+vendor/firmware/a620_zap.b00|8c20cfff20d7fe9814581b353c1f58d38636e8c5
+vendor/firmware/a620_zap.b01|14724b0e56ec586e9174fd3dc014ebb3a1dc581e
+vendor/firmware/a620_zap.b02|0403cd18344b2918106f73079b2bb8aa23928509
+vendor/firmware/a620_zap.elf|fefca48622d3d161d1d5ec7d59c06fc4d74c9803
+vendor/firmware/a620_zap.mdt|09cd850710f813a0a2675260f5cee3ebfcd2196a
+vendor/firmware/a630_sqe.fw|09a86618d0c8282bba3ed85774e9841fb3230826
 vendor/firmware/a650_gmu.bin|c744acb10afb7c980d333c5b6521e2a18993ff14
 vendor/firmware/a650_sqe.fw|130a0df5c562e69ab717867ebc0b7abf6f3bcb3f
 vendor/firmware/a650_zap.b00|8c20cfff20d7fe9814581b353c1f58d38636e8c5
@@ -243,7 +256,7 @@ vendor/lib64/camera/components/com.mi.node.rearvideo.so|7d71f5a762bc1d2a46fa7d3e
 vendor/lib64/camera/components/com.mi.node.skinbeautifier.so|9e79f99d0202db5da87e9a2de1b817fad55e7301
 vendor/lib64/camera/components/com.mi.node.superlowlightraw.so|f101209649e7b119e2e7ed52ba0836885a9ef6ae
 vendor/lib64/camera/components/com.mi.node.videobokeh.so|45d40fc62d25edfd55b250ef7899e4c384f8e46d
-vendor/lib64/camera/components/com.mi.node.watermark.so|dbc01c6035e6c3b866bc06e6bb432c30e6de965a
+vendor/lib64/camera/components/com.mi.node.watermark.so|abe149107d2dd51773467269308ba6af5cb7741c
 vendor/lib64/camera/components/com.qti.camx.chiiqutils.so|c9e902f92ffd43f11a863632a3e14b47e648660e
 vendor/lib64/camera/components/com.qti.eisv2.so|922283630dbb9cc40530b802941a3fbb27b49166
 vendor/lib64/camera/components/com.qti.eisv3.so|f0a0b0eb5f54f7eaaa38ab6f8aa2ce7cc3b42b94
@@ -457,10 +470,13 @@ vendor/lib64/libxmi_hdr_checker.so|3124e8cec5613e01fff7921d22a19888b3cebb8d
 vendor/lib64/libxmi_high_dynamic_range.so|03803efe0604454ff6fee39f4b4e9b189a83f144
 vendor/lib64/vendor.qti.hardware.camera.device@2.0.so|8c8e36a337718de47154baf4979936f2abf1d29c
 vendor/lib64/vendor.qti.hardware.camera.device@3.5.so|2c95532c8de8ae9bc61cd4d62963a4474ab717ee
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|8629ddc55445116852140a88c6d272683ac6bd49
+
+# Camera (postproc) - from LA.UM.9.14.r1-18400.02-LAHAINA.QSSI12.0
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|afeca01f1fc2619ddf1aada01d42735ab9efa682
 
 # Charger - MIUI
 vendor/bin/batterysecret|e495988b7619cffccb8e834d3d7c75fecb12b524
+vendor/bin/hvdcp_opti|d3dae2d3c64df366b82d11deb100af4d8813131f
 vendor/etc/init/init.batterysecret.rc|9abbe6fd82a0bd5b4499bfe141a5645e76e57606
 
 # CNE
@@ -709,11 +725,18 @@ vendor/bin/mdm_helper_proxy|e7ba5764336a32454e4f8de6ff3e1a9c9c2a61bd
 vendor/bin/mdm_helper|aeb8aad56538231d57b7e945c918da39f0c19941
 vendor/lib64/libmdmimgload.so|5f9a20c24dd7f981eec4618769ef74ade0704d54
 
-# Media (Codec2) - MIUI (munch)
-vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy|9f6a77271971618b555d41d83e5c55f3cff684d2
-vendor/lib/libqcodec2_core.so|b92991b36af312411eb4779fea1a5c22550c1d56
-vendor/lib/libqcodec2_utils.so|485acb30246d20a1cfb0c91a9b3e185338d41d17
-vendor/lib/libqcodec2_v4l2codec.so|67057e81477e4b3432997b9d269e3db39c50e421
+# Media (Codec2)
+vendor/bin/hw/vendor.qti.media.c2@1.0-service
+vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
+vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy
+vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy
+vendor/etc/vintf/manifest/c2_manifest_vendor.xml
+vendor/lib/libqcodec2_base.so
+vendor/lib/libqcodec2_basecodec.so
+vendor/lib/libqcodec2_core.so
+vendor/lib/libqcodec2_platform.so
+vendor/lib/libqcodec2_utils.so
+vendor/lib/libqcodec2_v4l2codec.so
 
 # MMI
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
@@ -823,6 +846,7 @@ vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/libril-qc-logger.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-radioconfig.so
+vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/libsettings.so
 vendor/lib64/qcrild_librilutils.so
@@ -1020,15 +1044,10 @@ vendor/lib64/vendor.qti.esepowermanager@1.0.so
 vendor/lib64/vendor.qti.esepowermanager@1.1.so
 
 # SecureMSM (SECDISP)
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libStDrvInt.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libsi.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # SecureMSM
 vendor/bin/hdcp1prov
@@ -1109,6 +1128,10 @@ vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
 
+# UBWC
+vendor/lib/libstreamparser.so
+vendor/lib/libvideoutils.so
+
 # Vibrator - MIUI
 vendor/firmware/0_click_P_RTP.bin|da39a3ee5e6b4b0d3255bfef95601890afd80709
 vendor/firmware/1_doubelClick_P_RTP.bin|da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -1123,18 +1146,26 @@ vendor/firmware/aw8697_rtp_1.bin|9f32c9bf0776a566d3254129a028dae9bed76b81
 vendor/bin/vppservice
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/init/vppservice.rc
+vendor/lib/libOmxVpp.so
 vendor/lib/libvppclient.so
 vendor/lib/libvpphcp.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvppimmotion.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvpptestutils.so
+vendor/lib/vendor.qti.hardware.vpp@1.1.so
+vendor/lib/vendor.qti.hardware.vpp@1.2.so
+vendor/lib/vendor.qti.hardware.vpp@1.3.so
+vendor/lib64/libOmxVpp.so
 vendor/lib64/libvppclient.so
 vendor/lib64/libvpphcp.so
 vendor/lib64/libvpphvx.so
 vendor/lib64/libvppimmotion.so
 vendor/lib64/libvpplibrary.so
 vendor/lib64/libvpptestutils.so
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 
 # Widevine - MIUI
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine|07b8d21fb76abd377428a6d1b52d6aadfc5892a1

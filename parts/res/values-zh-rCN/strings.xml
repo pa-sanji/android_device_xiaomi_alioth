@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Per-app refresh rate -->
+    <string name="alioth_refresh_title">应用刷新率</string>
+    <string name="alioth_refresh_summary">为特定应用设置最高刷新率</string>
+    <string name="alioth_refresh_default">默认</string>
+
+</resources>

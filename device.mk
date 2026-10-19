@@ -316,8 +316,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
-
 # Logging
 SPAMMY_LOG_TAGS := \
     AiAiEcho \
@@ -490,6 +488,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.ipsec_tunnel_migration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnel_migration.xml
 
+# ION
+$(call soong_config_set_bool,libion,legacy_impl,true)
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
@@ -562,7 +563,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # SoC Property
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.soc.model=SM8250
+    ro.soc.model=SM8250-AC
 
 # Storage
 PRODUCT_VENDOR_PROPERTIES += \

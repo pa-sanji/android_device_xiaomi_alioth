@@ -1,6 +1,5 @@
 //
 // Copyright (C) 2017-2021 The LineageOS Project
-//           (C) 2023 Paranoid Android
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -8,7 +7,7 @@
 android_app {
     name: "XiaomiParts",
 
-    srcs: ["src/**/*.kt"],
+    srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
     certificate: "platform",
     platform_apis: true,
