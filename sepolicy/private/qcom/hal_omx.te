@@ -1,1 +1,0 @@
-allow hal_omx_server ion_device:chr_file rw_file_perms;

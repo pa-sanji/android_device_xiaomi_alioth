@@ -129,9 +129,6 @@ KERNEL_DEFCONFIG := alioth_defconfig
 
 KERNEL_LLVM_SUPPORT := true
 
-# Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := true
-
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
@@ -156,9 +153,6 @@ TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
-
-# Power
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-ext.cpp
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true

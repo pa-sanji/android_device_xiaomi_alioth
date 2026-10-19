@@ -1,2 +1,0 @@
-# Access /dev/ion
-allow bufferhubd ion_device:chr_file r_file_perms;

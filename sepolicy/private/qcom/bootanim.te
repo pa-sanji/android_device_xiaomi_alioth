@@ -1,2 +1,0 @@
-# Allow access to ion memory allocation device
-allow bootanim ion_device:chr_file rw_file_perms;

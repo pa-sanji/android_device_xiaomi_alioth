@@ -1,1 +1,0 @@
-allow hal_graphics_composer ion_device:chr_file r_file_perms;

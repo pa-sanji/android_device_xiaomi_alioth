@@ -1,1 +1,0 @@
-allow { hal_keymint_server -coredomain } ion_device:chr_file r_file_perms;

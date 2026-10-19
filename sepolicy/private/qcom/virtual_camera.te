@@ -1,2 +1,0 @@
-# ION is used by vendor to allocate graphic buffers needed by virtual_camera
-allow cameraserver ion_device:chr_file rw_file_perms;
