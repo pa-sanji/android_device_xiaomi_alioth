@@ -34,6 +34,7 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
     device/xiaomi/alioth/sepolicy/vendor/xiaomi/audio \
     device/xiaomi/alioth/sepolicy/vendor/xiaomi/battery \
     device/xiaomi/alioth/sepolicy/vendor/xiaomi/bluetooth \
+    device/xiaomi/alioth/sepolicy/vendor/xiaomi/bootctl \
     device/xiaomi/alioth/sepolicy/vendor/xiaomi/camera \
     device/xiaomi/alioth/sepolicy/vendor/xiaomi/display \
     device/xiaomi/alioth/sepolicy/vendor/xiaomi/fingerprint \

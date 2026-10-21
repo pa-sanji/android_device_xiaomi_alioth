@@ -530,6 +530,17 @@ TARGET_NFC_SKU := pro
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.rcs.supported=1
 
+# Persistent logcat: keep a rotating logcat in /data/misc/logd so a failed boot
+# can be diagnosed from recovery (adb pull /data/misc/logd). Small footprint.
+# NOTE: must be PRODUCT_SYSTEM_PROPERTIES — PRODUCT_PROPERTY_OVERRIDES lands in
+# /vendor/build.prop on this tree, where vendor_init lacks set permission on
+# logpersistd_logging_prop (system_public_prop). That produced 4 AVC denials.
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.logd.logpersistd=logcatd \
+    persist.logd.logpersistd.size=16 \
+    persist.logd.logpersistd.rotate_kbytes=2048 \
+    persist.logd.logpersistd.buffer=all
+
 # RmNet Data
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.rmnet.data.enable=true \
