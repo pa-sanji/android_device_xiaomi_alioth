@@ -62,6 +62,27 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing
 
+# The prebuilt vendor audio HAL (vendor/lib/hw/audio.primary.alioth.so) has a
+# hard DT_NEEDED on libaudioroute-v34.so, the VNDK-34 flavoured audioroute:
+#
+#   readelf -d .../audio.primary.alioth.so | grep audioroute
+#       [NEEDED] libaudioroute-v34.so
+#       [NEEDED] libaudioroute_ext.so
+#
+# hardware/lineage/compat provides exactly that module (Android.bp:93,
+# prebuilt vndk/v34/{arm,arm64}), which is the same shim LineageOS alioth
+# relies on in its extract-files.py:
+#
+#   .replace_needed('libaudioroute.so', 'libaudioroute-v34.so')
+#
+# Without it the linker cannot load audio.primary.alioth.so, so AudioFlinger
+# never gets a primary module and every listAudioPorts call fails - 2012 of
+# them in penguin_boot2.txt, with no pcm_open and no audio.primary logging at
+# all. It also has to be packaged: nothing in the tree pulls it in
+# automatically.
+PRODUCT_PACKAGES += \
+    libaudioroute-v34
+
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.audio.delta.refresh=true \
     persist.vendor.audio.misound.disable=true \
