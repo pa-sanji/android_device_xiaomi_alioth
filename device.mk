@@ -272,7 +272,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.xiaomi
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.fingerprint.sensor_location=1080|965|115|local:4630946736638489729 \
