@@ -271,8 +271,12 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
+# AIDL, matching PocoF3Releases device_xiaomi_sm8250-common/kona.mk:201.
+# config_biometric_sensors is left empty in the AliothFrameworks overlay so
+# AuthService picks the AIDL path; shipping the HIDL @2.3 service instead only
+# makes the framework ask for a @2.1 HIDL interface that never answers.
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
+    android.hardware.biometrics.fingerprint-service.xiaomi
 
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.fingerprint.sensor_location=1080|965|115|local:4630946736638489729 \

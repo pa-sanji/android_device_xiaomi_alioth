@@ -460,13 +460,18 @@
     <!-- Indicates whether device has a power button fingerprint sensor. -->
     <bool name="config_is_powerbutton_fps">true</bool>
 
-    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
-         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
-         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
-         and Strength as defined in Authenticators.java -->
-    <string-array name="config_biometric_sensors" translatable="false" >
-        <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
-     </string-array>
+    <!-- config_biometric_sensors must stay EMPTY (AOSP default).
+         AuthService.registerFingerprintSensors() derives the HAL flavour from it:
+             new FingerprintSensorConfigurations(
+                     !(hidlConfigStrings != null && hidlConfigStrings.length > 0))
+         A non-empty array makes that flag false, and
+         FingerprintProvider.initSensors() then wraps the sensors in
+         HidlToAidlSensorAdapter, which resolves
+         android.hardware.biometrics.fingerprint.V2_1.IBiometricsFingerprint
+         (HIDL) - see penguin_boot2.txt: 69690 NoSuchElementException and
+         117380 failed @2.1 lookups. Leaving it empty selects the AIDL path,
+         which is what the AIDL fingerprint-service.xiaomi implements and what
+         PocoF3Releases ships. -->
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
